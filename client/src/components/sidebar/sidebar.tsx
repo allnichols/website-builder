@@ -1,40 +1,27 @@
 import styles from "./sidebar.module.css"
 import titleIcon from "../../icons/title.svg"
-import { useDraggable } from "@dnd-kit/core"
+import { SidebarItems } from "./item/sidebar-item"
 
+const elements = [
+  {
+    id: "title",
+    icon: titleIcon,
+    name: "Title",
+  },
+  {
+    id: "text",
+    icon: titleIcon,
+    name: "Text",
+  },
+]
 function Sidebar() {
-  const { attributes, listeners, setNodeRef, transform } = useDraggable({
-    id: "elements",
-    attributes: {
-      role: "sidebar-elements",
-      roleDescription: "basic elements to drop",
-    },
-    data: {
-      name: "sidebar",
-      type: "elements",
-    },
-  })
-
-  const style = transform
-    ? {
-        transform: `translate3d(${transform.x}px, ${transform.y}px, 0)`,
-      }
-    : undefined
-
   return (
     <nav className={styles.sidebar} id="sidebar">
       <p>Elements</p>
-      <div
-        ref={setNodeRef}
-        {...attributes}
-        {...listeners}
-        className={styles["sidebar-section"]}
-        style={style}
-      >
-        <div className={styles["sidebar-item"]} id="text">
-          <img src={titleIcon} alt="title" />
-          <p>Title</p>
-        </div>
+      <div className={styles["sidebar-section"]}>
+        {elements.map(element => {
+          return <SidebarItems key={element.id} element={element} />
+        })}
       </div>
     </nav>
   )

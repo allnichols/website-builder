@@ -1,7 +1,7 @@
 import { useDroppable, useDndContext } from "@dnd-kit/core"
 
 function MainContent() {
-  const { active } = useDndContext()
+  const { active, activeNode } = useDndContext()
   const { isOver, setNodeRef } = useDroppable({
     id: "droppable",
     data: {
@@ -9,8 +9,8 @@ function MainContent() {
     },
   })
 
-  if (active?.data) {
-    console.log("active", active.data)
+  if (active) {
+    console.log("active", active?.id)
   }
 
   const style = {

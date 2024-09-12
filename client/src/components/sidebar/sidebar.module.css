@@ -17,8 +17,14 @@
   width: 100%;
   padding: 0.5rem;
   cursor: pointer;
-  border: 1px solid grey;
+  background-color: #4b5155;
   border-radius: 5px;
+  color: white;
+  transition: background-color 0.15s;
+
+  &:hover {
+    background-color: #6c757d;
+  }
 
   & p {
     margin: 0;

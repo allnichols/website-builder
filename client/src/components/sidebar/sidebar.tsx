@@ -1,12 +1,12 @@
 import styles from "./sidebar.module.css"
-import TitleIcon from "../../icons/title.svg"
+import titleIcon from "../../icons/title.svg"
 function Sidebar() {
   return (
     <div className={styles.sidebar}>
       <p>Elements</p>
       <div className={styles["sidebar-section"]}>
-        <div className={styles["sidebar-item"]}>
-          <img src={TitleIcon} />
+        <div className={styles["sidebar-item"]} id="text">
+          <img src={titleIcon} alt="title" />
           <p>Title</p>
         </div>
       </div>

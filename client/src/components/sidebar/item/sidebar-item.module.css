@@ -8,7 +8,7 @@
   transition: background-color 0.15s;
 
   &:hover {
-    background-color: #6c757d;
+    background-color: #d5d5d5;
   }
 
   & p {

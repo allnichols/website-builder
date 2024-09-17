@@ -1,23 +1,34 @@
+import { useState } from "react"
 import { useDroppable, useDndContext } from "@dnd-kit/core"
 
 function MainContent() {
-  const { active, activeNode } = useDndContext()
+  const [tree, setTree] = useState({})
+  const { active, activeNode, activatorEvent } = useDndContext()
   const { isOver, setNodeRef } = useDroppable({
-    id: "droppable",
+    id: "canvas",
     data: {
       supports: ["elements"],
     },
   })
 
-  if (active) {
-    console.log("active", active?.id)
-  }
-
   const style = {
-    backgroundColor: isOver ? "red" : "green",
+    backgroundColor: isOver ? "#f0f0f0" : "white",
   }
 
-  return <main className="content" ref={setNodeRef} style={style}></main>
+  if (active) {
+    // console.log(active.data)
+  }
+
+  return (
+    <main
+      className="content"
+      ref={setNodeRef}
+      style={style}
+      onMouseUp={e => console.log(e)}
+    >
+      {}
+    </main>
+  )
 }
 
 export { MainContent }

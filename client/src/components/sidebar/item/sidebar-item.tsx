@@ -9,7 +9,7 @@ function SidebarItems({ element }: any) {
       roleDescription: "basic elements to drop",
     },
     data: {
-      name: "elemtents",
+      name: "elements",
       type: `${element.id}`,
     },
   })

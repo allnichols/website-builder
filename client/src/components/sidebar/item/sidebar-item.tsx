@@ -10,7 +10,7 @@ function SidebarItems({ element }: any) {
     },
     data: {
       name: "elements",
-      type: `${element.id}`,
+      component: `${element.id}`,
     },
   })
 

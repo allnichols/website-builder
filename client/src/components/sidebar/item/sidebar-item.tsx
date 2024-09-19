@@ -3,14 +3,15 @@ import { useDraggable } from "@dnd-kit/core"
 
 function SidebarItems({ element }: any) {
   const { attributes, listeners, setNodeRef, transform } = useDraggable({
-    id: `${element.id}`,
+    id: element.id,
     attributes: {
       role: "sidebar-elements",
       roleDescription: "basic elements to drop",
     },
     data: {
-      name: "elements",
-      component: `${element.id}`,
+      type: "elements",
+      name: element.name,
+      component: element.component,
     },
   })
 

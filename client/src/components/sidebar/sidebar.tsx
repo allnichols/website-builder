@@ -7,11 +7,13 @@ const elements = [
     id: "title",
     icon: titleIcon,
     name: "Title",
+    component: "h1",
   },
   {
     id: "text",
     icon: titleIcon,
     name: "Text",
+    component: "p",
   },
 ]
 function Sidebar() {

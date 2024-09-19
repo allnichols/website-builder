@@ -1,5 +1,6 @@
 import { useDroppable } from "@dnd-kit/core"
 import { useAppDispatch, useAppSelector } from "../../app/hooks"
+import styles from "./content.module.css"
 
 function MainContent() {
   const dispatch = useAppDispatch()
@@ -16,14 +17,9 @@ function MainContent() {
   }
 
   return (
-    <main className="content" ref={setNodeRef} style={style}>
+    <main className={styles.main_content} ref={setNodeRef} style={style}>
       {canvas.tree.map((element: any, index: number) => {
-        if (element.component === "title") {
-          return <h1 key={element.id + "-" + index}>title</h1>
-        }
-        if (element.component === "text") {
-          return <p key={element.id + "-" + index}>text</p>
-        }
+        return <element.component key={index}>{element.name}</element.component>
       })}
     </main>
   )
